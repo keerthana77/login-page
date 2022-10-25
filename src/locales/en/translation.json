@@ -1,0 +1,12 @@
+{
+    "email": "Email",
+    "password": "Password",
+    "trouble_login": "Trouble logging in?",
+    "login": "Login",
+    "copyright": "Copyright © 2022 Liteon Singapore.",
+    "recover": "Recover Password",
+    "forgot_input_placeholder": "Enter your email account",
+    "wrong_email_msg": "Please enter a valid email address.",
+    "back": "Back",
+    "send": "Send"
+}

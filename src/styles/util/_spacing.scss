@@ -1,0 +1,41 @@
+$spacers: (1, 2, 3, 4, 5, 6, 7, 8, 9 , 10, 11, 12, 13, 14, 15);
+
+:root {
+    @each $space in $spacers {
+        --spacer-#{$space}: calc(#{$space} * 5px);
+    }
+}
+
+$spaceamounts: (
+    3,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    75,
+    100
+);
+$sides: (
+    top,
+    bottom,
+    left,
+    right
+);
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .m-#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px !important;
+        }
+
+        .p-#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px !important;
+        }
+    }
+}

@@ -1,0 +1,140 @@
+@import '../../styles/util/mixins';
+@import '../../styles/util/variables';
+@import '../../styles/util/spacing';
+
+.login {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    height: 100vh;
+    &__background {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    &__content {
+        grid-row: 2/3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &--logo {
+            background-image: url('../../assets/logo-eon-os.png');
+            width: 350px;
+            height: 128px;
+        }
+        &--email {
+            margin-bottom: var(--spacer-3);
+        }
+        &--password {
+            position: relative;
+        }
+        &--input {
+            width: 470px;
+            height: 45px;
+            outline: none;
+            border: 1px solid $turquoise-1;
+            padding: 0px var(--spacer-2);
+            border-radius: 5px;
+            &:focus {
+                -webkit-box-shadow: -1px -1px 12px 8px rgba(79, 248, 255, 0.25);
+                -moz-box-shadow: -1px -1px 12px 8px rgba(79, 248, 255, 0.25);
+                box-shadow: -1px -1px 12px 8px rgba(79, 248, 255, 0.25);
+                z-index: 10;
+                -webkit-appearance: none;
+            }
+            &-icon {
+                background-image: url('../../assets/icon-hide-pw-24.svg');
+                width: 24px;
+                height: 24px;
+                display: inline-block;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+            }
+            &-eyeicon {
+                background-image: url('../../assets/icon-showpw-24.svg');
+            }
+        }
+        &--trouble {
+            padding-top: 42px;
+            color: $turquoise-3;
+            font-size: $font-12;
+            line-height: $line-height-12;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        &--button {
+            border-radius: 20px;
+            width: 180px;
+            margin-top: var(--spacer-2);
+        }
+        &--error {
+            color: $error;
+            text-align: left;
+            width: 100%;
+            font-size: $font-12;
+            line-height: $line-height-12;
+        }
+        &--title {
+            color: $gray-6;
+            font-weight: bold;
+        }
+        &--message {
+            color: $turquoise-1;
+        }
+    }
+    &__footer {
+        grid-row: 3/3;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        color: $gray-5;
+        font-size: $font-12;
+    }
+    &__success {
+        color: $gray-6;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &--boldtext {
+            font-weight: bold;
+            font-size: $font-16;
+            line-height: $line-height-16;
+            padding-top: var(--spacer-3);
+        }
+        &--normal {
+            font-size: $font-14;
+            line-height: $line-height-14;
+            padding-top: var(--spacer-2);
+        }
+        &--link {
+            color: $turquoise-3;
+            cursor: pointer;
+        }
+        &--smalltext {
+            font-size: $font-12;
+            line-height: $line-height-12;
+            color: $gray-5;
+            padding: var(--spacer-2);
+        }
+        &--button {
+            width: 180px;
+            height: 35px;
+            border-radius: 20px;
+        }
+    }
+    &__reset {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

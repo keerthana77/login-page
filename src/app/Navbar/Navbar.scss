@@ -1,0 +1,126 @@
+@import '../../styles/util/_variables.scss';
+
+.navbar {
+    grid-column: 1/4;
+    background-color: $blue-2;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    &.collapse {
+        grid-column: 1;
+        & .navbar__sublist {
+            left: 70px;
+        }
+    }
+    &__header {
+        grid-row: 1/2;
+        display: flex;
+        align-items: center;
+        padding: var(--spacer-2) var(--spacer-3);
+        border-bottom: 1px solid $blue-1;
+        &--icon {
+            background: url('../../assets/edge-mgnt-icon.svg');
+            width: 11px;
+            height: 30px;
+            
+            &-wrapper {
+                background: $blue-1;
+                border: 1px solid $turquoise-1;
+                width: 35px;
+                height: 35px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        &--title {
+            display: flex;
+            flex-direction: column;
+            padding-left: var(--spacer-2);
+            &-name {
+                font-size: $font-16;
+                line-height: $line-height-14;
+                font-weight: bold;
+                color: $turquoise-1;
+            }
+            &-sub {
+                font-size: $font-12;
+                line-height: $line-height-14;
+                color: $blue-5;
+
+            }
+        }
+    }
+    &__list {
+        grid-row: 2/4;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        &--item {
+            border-bottom: 1px solid var(--white-color);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            padding: var(--spacer-2) var(--spacer-3);
+            &:hover {
+                background: $blue-3;
+            }
+            & a {
+                text-decoration: none;
+                font-size: $font-14;
+                line-height: $line-height-14;
+                color: $turquoise-1;
+                display: block;
+                padding-left: var(--spacer-3);
+            }
+            &.active {
+                background: linear-gradient(to left, #66D0D5 0%, $turquoise-1 100%);
+                &  a {
+                    color: $gray-2;
+                    font-weight: bold;
+                }
+            }  
+        }
+    }
+    &__sublist {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: 235px;
+        background: $blue-2;
+        top: 0;
+        width: 180px;
+        transition: all 0.5s ease-in;
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        &--item {
+            padding: var(--spacer-2) var(--spacer-3);
+            &>a {
+                color: $turquoise-1 !important;
+                font-weight: normal !important;
+            }
+            &:hover {
+                background: $blue-3 !important;
+            }
+        }
+    }
+    &__collapse {
+        grid-row: 9/10;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding:0px var(--spacer-3);
+        &--icon{ 
+            background: url('../../assets/icon-collapse-24.svg');
+            width: 24px;
+            height: 24px;
+        }
+        &--text {
+            color: $turquoise-1;
+            padding-left: var(--spacer-2);
+        }
+    }
+}

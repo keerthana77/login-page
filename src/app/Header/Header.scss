@@ -1,0 +1,104 @@
+@import '../../styles/util/_variables.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 1px solid $blue-1;
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background: $blue-2;
+  height: 70px;
+  &__logo {
+    display: flex;
+    padding: var(--spacer-2) var(--spacer-4);
+    border-right: 1px solid $blue-1;
+    &--icon {
+      background: url('../../assets/logo-eon-os-small.png');
+      width: 190px;
+      height: 50px;
+      display: inline-block;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    height: 100%;
+  }
+  &__locale {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    border: 1px solid $blue-1;
+    border-top: 0px;
+    border-bottom: 0px;
+    &--name {
+      color: $turquoise-1;
+      padding-right: var(--spacer-1);
+      font-size: $font-12;
+    }
+    &--dropdown {
+      &-icon {
+        background: url('../../assets/down-arrow.svg');
+        width: 12px;
+        height: 6px;
+        cursor: pointer;
+        display: inline-block;
+      }
+      &-content {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease-in;
+        top: 0px;
+        &.show {
+          visibility: visible;
+          opacity: 1;
+          top:71px;
+        }
+        & li {
+          padding: var(--spacer-1) 13px;
+          border-bottom: 1px solid var(--light-gray-color);
+          background: $blue-2;
+          color: $turquoise-1;
+          font-size: $font-12;
+          line-height: $line-height-14;
+          cursor: pointer;
+          &:hover {
+            background: $blue-3;
+          }
+          &:last-child {
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  &__user {
+    width: 250px;
+    height: 40px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    padding: var(--spacer-2);
+    &--icon {
+      background: url('../../assets/icon-profile-default-36.svg');
+      height: 36px;
+      width: 36px;
+    }
+    &--name {
+      color: $blue-5;
+      padding-left: var(--spacer-2);
+    }
+  }
+}

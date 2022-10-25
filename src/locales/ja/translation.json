@@ -1,0 +1,12 @@
+{
+    "email": "Eメール",
+    "password": "パスワード",
+    "trouble_login": "ログインできませんか？",
+    "login": "ログイン",
+    "copyright": "著作権 © 2022 Liteon シンガポール。",
+    "recover": "パスワード復旧",
+    "forget_input_placeholder": "メールアカウントを入力してください",
+    "wrong_email_msg": "有効なメールアドレスを入力してください。",
+    "back": "戻る",
+    "send": "送信"
+}

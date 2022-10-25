@@ -1,0 +1,31 @@
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    &__header {
+      display: flex;
+      align-items: center;
+      padding-bottom: 16px;
+      flex-basis: 100%;
+    }
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &__filter {
+      margin-left: auto;
+      &--input {
+        border: 0px;
+        border-bottom: 1px solid var(--liteon-color);
+        padding: 8px 10px;
+        outline: none;
+      }
+    }
+    &__body {
+      flex-basis: 100%;
+    }
+    &__footer {
+      flex-basis: 100%;
+      padding: 16px 0px;
+    }
+  }
